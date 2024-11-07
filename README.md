@@ -125,8 +125,8 @@ cd vq_map_mono
 
 ## Acknowledgements
 
-The surround-view version of VQ-Map is based on [BEVFusion].
-It is also greatly inspired by the following outstanding contributions to the open-source community: [Deformable-DETR], [BEVFormer], [BEiTv2], [VQGAN], [PON]
+The surround-view version of VQ-Map is based on [BEVFusion]((https://github.com/mit-han-lab/bevfusion)).
+It is also greatly inspired by the following outstanding contributions to the open-source community: [Deformable-DETR](https://github.com/fundamentalvision/Deformable-DETR), [BEVFormer](https://github.com/fundamentalvision/BEVFormer), [BEiTv2](https://github.com/microsoft/unilm/tree/master/beit2), [VQGAN](https://github.com/CompVis/taming-transformers), [PON](https://github.com/tom-roddick/mono-semantic-maps)
 
 ## Citation
 
