@@ -1,4 +1,0 @@
-{}
-{"mode": "train", "epoch": 1, "iter": 50, "lr": 0.0001, "memory": 1912, "data_time": 0.8701, "loss/reconstruction": 0.29118, "loss/codebook": 2.23412, "perplexity": 10.56944, "loss": 2.5253, "grad_norm": 3.19343, "time": 1.03239}
-{"mode": "train", "epoch": 1, "iter": 100, "lr": 0.0001, "memory": 1912, "data_time": 0.7352, "loss/reconstruction": 0.22579, "loss/codebook": 0.85902, "perplexity": 9.55875, "loss": 1.08481, "grad_norm": 1.54652, "time": 0.89377}
-{"mode": "train", "epoch": 1, "iter": 150, "lr": 0.0001, "memory": 1912, "data_time": 0.75188, "loss/reconstruction": 0.19717, "loss/codebook": 0.44117, "perplexity": 9.47059, "loss": 0.63834, "grad_norm": 1.035, "time": 0.90949}
