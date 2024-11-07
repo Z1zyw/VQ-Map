@@ -345,6 +345,31 @@ pretrain_model:
     num_res_blocks: 3
     resolution: 16
 
+# TODO: remove pretrain_model2, this model is not being used in this paper.
+# Currently, within this framework, pretrain_model2 doesn’t do anything.
+pretrain_model2:
+  type: TokenDAE
+  checkpoint: null
+
+  vqvae: ${pretrain_model}
+
+  noise_model: null
+
+  token_encoder:
+    type: TokenTransformer
+    mask_range: [0.1, 0.5]
+    error_range: [0.01, 0.2]
+    pretrain_codebook_size: 256
+    num_patches: 625
+    embedding_dim: 512
+    n_head: 8
+    norm: "layer"
+    mlp_ratio: 4
+    n_layers: 2
+    n_layers_decoder: 4 
+    kernel_size: 7
+
+
 # tiny
 # pretrain_model: 
 #   type: CNNVQVAE
@@ -437,7 +462,7 @@ model:
         h_samples: 4
         dense_sample: 2
         using_ref_dim: 2
-        mask_kernel_size: 5
+        mask_kernel_size: 5·
 
   fuser: null
 
@@ -448,6 +473,6 @@ model:
       type: TokenMLPHead
       input_dim: 512
       hidden_dim: 1024
-      output_dim: 257
+      output_dim: 257 # +1 because of the pretrain_model2, which is not used in this paper.
       # output_dim: 65
       num_layers: 3
