@@ -10,6 +10,6 @@ from .vtransforms import *
 from .codebook import *
 from .encoder import *
 from .decoder import *
-# from .token_encoder import *
+from .token_encoder import *
 from .vqvae import *
 from .vqdae import *

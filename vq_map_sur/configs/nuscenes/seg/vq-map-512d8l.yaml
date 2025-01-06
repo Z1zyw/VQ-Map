@@ -466,7 +466,7 @@ model:
 
   fuser: null
 
-  decoder: ${pretrain_model}
+  decoder: ${pretrain_model2}
 
   heads:
     token: 
