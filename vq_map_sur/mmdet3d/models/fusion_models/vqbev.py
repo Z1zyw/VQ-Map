@@ -328,8 +328,8 @@ class VQBev(Base3DFusionModel):
         
         # sequence features
         if len(x.shape) == 3:
-            # pass 
-            raise NotImplementedError   
+            pass 
+            # raise NotImplementedError   
         
         if self.training:
             if self.supervision == 'index':
