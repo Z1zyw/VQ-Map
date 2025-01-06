@@ -462,7 +462,7 @@ model:
         h_samples: 4
         dense_sample: 2
         using_ref_dim: 2
-        mask_kernel_size: 5·
+        mask_kernel_size: 5
 
   fuser: null
 
