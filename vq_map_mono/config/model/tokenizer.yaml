@@ -1,0 +1,50 @@
+activation: relu
+backbone: resnet50
+
+# real world shape, 50m x 50m 
+bev_size: 
+- 224
+- 224
+patch_size: 16
+codebook_size: 256
+codebook_dim: 128
+
+dilation: false
+dim_feedforward: 1024
+dim_model: 256
+dropout: 0.1
+img_shape:
+- 900
+- 1600
+
+masks: false
+y_sample_num: 4
+
+
+# default
+num_decoder_head: 8
+num_decoder_layers: 6
+num_decoder_points: 32
+# num_decoder_points: 8
+
+# num_feature_levels: 4
+num_feature_levels: 1
+num_query_each_token: 1
+num_token_each_patch: 1
+
+position_embedding: sine
+x_range:
+- -25
+- 25
+z_range:
+- 1
+- 50
+
+# embedding: z
+# embedding: all
+embedding: one
+
+# does decoder use global attention
+use_global_attention: true
+use_cnn: false
+

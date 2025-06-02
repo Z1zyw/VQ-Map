@@ -1,0 +1,39 @@
+augment: true
+
+bev_classes:
+- drivable_area
+- ped_crossing
+- walkway
+- carpark_area
+bev_length: 224
+bev_width: 224
+
+bev_pretrain: false
+bev_mean:
+- 0.5
+bev_std:
+- 0.5
+
+# img_height: 600
+# img_width: 960
+
+img_size: 
+- 960
+- 600
+
+crop_height: 1200
+crop_width: 1920
+  
+img_mean:
+- 0.485
+- 0.456
+- 0.406
+
+img_root_dir: {YOUR ARGOVERSE DATASET PATH}
+img_std:
+- 0.229
+- 0.224
+- 0.225
+
+mode: train
+bev_root_dir: {following PON to generate BEV gt}

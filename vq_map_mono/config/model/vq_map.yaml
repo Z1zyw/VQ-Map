@@ -1,0 +1,15 @@
+
+tokenizer_cfg_path: config/model/tokenizer.yaml
+
+bev_pretrain_cfg_path: config/model/codebook.yaml
+bev_pretrain_ckpt_path: $YOUR_CHECKPOINT_PATH$
+
+out_shape:
+- 200
+- 200
+
+use_pretrain_encoder: false
+bev_encoder_cfg_path: config/model/token_identity.yaml
+
+finetune_encoder: false
+finetune_decoder: false

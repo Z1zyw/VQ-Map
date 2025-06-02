@@ -1,0 +1,25 @@
+image_channels: 4
+patch_size: 16
+
+atte_resolutions:
+- 16
+codebook_beta: 1
+codebook_dim: 128
+codebook_size: 256
+patch_size: 16
+decoder_channels:
+- 512
+- 256
+- 256
+- 128
+- 128
+decoder_num_res_block: 3
+
+encoder_channels:
+- 64
+- 128
+- 128
+encoder_augment: 3
+
+resolution: 16
+lambda_reconstruction: 1.0

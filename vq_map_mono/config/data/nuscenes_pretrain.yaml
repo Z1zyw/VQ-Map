@@ -1,0 +1,45 @@
+augment: true
+
+bev_classes:
+- drivable_area
+- ped_crossing
+- walkway
+- carpark_area
+
+bev_length: 224
+bev_width: 224
+
+bev_pretrain: true
+bev_mean:
+- 0.5
+bev_std:
+- 0.5
+
+img_height: 600
+img_width: 800
+img_mean:
+- 0.485
+- 0.456
+- 0.406
+
+img_root_dir: data/nuscenes
+img_std:
+- 0.229
+- 0.224
+- 0.225
+
+mode: train
+
+info_path: data/nuscenes_infos_all_camera.pkl
+bev_root_dir: data/nuscenes_ground_truth
+train_split_path: data/nuscenes_splits/train_roddick.txt
+val_split_path: data/nuscenes_splits/val_roddick.txt
+
+camera_channels:
+- CAM_FRONT
+- CAM_FRONT_LEFT
+- CAM_FRONT_RIGHT
+- CAM_BACK_LEFT
+- CAM_BACK_RIGHT
+- CAM_BACK
+
