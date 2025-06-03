@@ -113,15 +113,58 @@ python tools/test.py configs/nuscenes/seg/ workdir/{YOUR_EXP_NAME}/{YOUR_SAVED_C
 
 ### Monocular
 
-The code for monocular experiments is currently being organized and will be released soon.
-
-<!-- ### Monocular TODO
+#### Prerequisites
 
 ```shell
 cd vq_map_mono
+conda create -n vq-map-mono python==3.8
+conda activate vq-map-mono
+
+pip install -r requirements.txt
 ```
 
-#### Data Preparation for Momocular Task -->
+Then, compile deformable attention cuda operator:
+
+```shell
+cd src/model/ops
+sh ./make.sh
+# unit test (should see all checking is True)
+python test.py
+```
+
+#### Data Preparation for Momocular Task
+
+Please refer to [PON](https://github.com/tom-roddick/mono-semantic-maps) to preparing the data (into data/nuscenes_ground_truth).
+
+```n
+├── configs
+├── src
+├── data
+│   ├── nuscenes
+│   │   ├── maps
+│   │   ├── samples
+│   │   ├── sweeps
+|   |   ├── v1.0-trainval
+│   ├── nuscenes_ground_truth
+│   │   ├── ....png
+│   │   ├── ....png
+│   ├── nuscenes_splits
+│   ├── nuscenes_infos..
+```
+
+#### Training
+
+##### For VQ-VAE training
+
+```shell
+accelerate launch --main_process_port 20000 src/train_cnn_vq.py --num-epochs 50 --optimizer adamw -n {YOUR_EXP_NAME} --data-cfg config/data/nuscenes_pretrain.yaml --model-cfg config/model/codebook.yaml -bs 32
+```
+
+##### For PV-BEV Alignment training
+
+```shell
+accelerate launch --main_process_port 20000 src/train_vq_map.py -bs 16 --model-cfg config/model/vq_map.yaml -n {YOUR_EXP_NAME} -nw 16 --lr 5e-4 --lr-backbone 5e-4 --data-cfg config/data/nuscenes.yaml --num-epochs 40
+```
 
 ## Acknowledgements
 
